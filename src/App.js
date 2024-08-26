@@ -112,7 +112,7 @@ function App() {
         <div className="con h-screen bg-gray-300" style={{backgroundColor:backColor.back1}}>
 
           {/* nav bar */}
-          <Navbar title = "Textutils" aboutText = "about TextUtils" mode = {mode} toggleMode = {toggleMode} modeText = {modeText} Color = {Color} handleColor = {handleColor} handleBackColor1 = {handleBackColor1} backColor = {backColor} greenText = {greenModeText} handleGreenMode = {handleGreenMode}/>
+          <Navbar title = "LexiMorph" aboutText = "about" mode = {mode} toggleMode = {toggleMode} modeText = {modeText} Color = {Color} handleColor = {handleColor} handleBackColor1 = {handleBackColor1} backColor = {backColor} greenText = {greenModeText} handleGreenMode = {handleGreenMode}/>
 
           {/* main */}
           <Alert alert = {alert}/>
