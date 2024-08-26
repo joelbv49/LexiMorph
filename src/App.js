@@ -17,10 +17,12 @@ function App() {
   const [modeText,setModeText] = useState("Enable Dark Mode");
   const toggleMode = ()=>{
     if(mode === "dark"){
-      setMode("light");
+      
       setModeText("Enable Dark mode");
       showAlert("Enabled light Mode","success");
+      setMode("light");
       document.title = "TextUtils -LightMode";
+
       // not a good practice
       // setInterval(() => {
       //   document.title = "TextUtils is amazing";
@@ -30,11 +32,11 @@ function App() {
       //   document.title = "install textUtils";
       // },1500);
     }
-    else{
-      setMode("dark");
+    else if(mode === "light"){ 
       setModeText("Enable light mode");
       showAlert("Enabled Dark Mode","success");
       document.title = "TextUtils -DarkMode";
+      setMode("dark");
       
     }
   }
@@ -92,13 +94,15 @@ function App() {
         textColor2:'text-white',
       })
       setGreenModeText("Enable Light Mode");
+      showAlert("Green Mode Enabled");
     }
-    else{
+    else if(greenMode.background2 === "bg-green-600"){
       setGreenMode({
         background2:'bg-white',
         textColor2:'text-black',
       })
       setGreenModeText("Enable Green Mode");
+      showAlert("Light Mode Enabled");
     }
   }
   return (
