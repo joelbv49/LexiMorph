@@ -94,7 +94,7 @@ function App() {
         textColor2:'text-white',
       })
       setGreenModeText("Enable Light Mode");
-      showAlert("Green Mode Enabled");
+      showAlert("Green Mode Enabled","Success");
     }
     else if(greenMode.background2 === "bg-green-600"){
       setGreenMode({
@@ -102,7 +102,7 @@ function App() {
         textColor2:'text-black',
       })
       setGreenModeText("Enable Green Mode");
-      showAlert("Light Mode Enabled");
+      showAlert("Light Mode Enabled","Success");
     }
   }
   return (
