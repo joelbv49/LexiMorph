@@ -21,7 +21,7 @@ function App() {
       setModeText("Enable Dark mode");
       showAlert("Enabled light Mode","success");
       setMode("light");
-      document.title = "TextUtils -LightMode";
+      document.title = "LexiMorph -LightMode";
 
       // not a good practice
       // setInterval(() => {
@@ -35,7 +35,7 @@ function App() {
     else if(mode === "light"){ 
       setModeText("Enable light mode");
       showAlert("Enabled Dark Mode","success");
-      document.title = "TextUtils -DarkMode";
+      document.title = "LexiMorph -DarkMode";
       setMode("dark");
       
     }
