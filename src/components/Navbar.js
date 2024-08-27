@@ -15,7 +15,7 @@ export default function Navbar({title = "Set your text here",aboutText,mode,togg
 
     <div className= {mode}>
       {/* navbar */}
-      <nav className="bg-slate-900 h-14 flex items-center justify-between px-8 dark:bg-black text-white  dark:border-b dark:border-white green:bg-green-500" style = {{color:Color.textColor}}>
+      <nav className="bg-slate-900 h-14 flex items-center justify-between px-8 dark:bg-black text-white  dark:border-b dark:border-white green:bg-green-500">
 
         <div className=" flex">
 
@@ -32,7 +32,7 @@ export default function Navbar({title = "Set your text here",aboutText,mode,togg
         </div>
         
         {/* color pallete */}
-        <label className="flex space-x-2">
+        {/* <label className="flex space-x-2">
           <input className='sr-only  peer' type="checkbox" name="" id="" />
           
           
@@ -50,27 +50,26 @@ export default function Navbar({title = "Set your text here",aboutText,mode,togg
             
           </div>
           <div className="text-xs border border-gray-500 px-2 py-1 rounded-full font-bold">customize color</div>
-        </label>
-        
-        {/* pinkMode */}
-        <label className='inline-flex  items-center space-x-2 ' >
-          <input className='peer sr-only' type="checkbox" />
-          <div className="relative w-8 h-4 rounded-full bg-gray-500 after:content-[''] after:absolute after:w-4 after:h-4 after:rounded-full after:bg-white  peer-checked:after:translate-x-full rtl:peer-checked:-translate-x-full peer-checked:bg-green-600 " onClick={handlePinkMode}> 
-          </div>
-          <p>{pinkText}</p>
-        </label>
+        </label> */}
+        <div className="">
+          {/* pinkMode */}
+          <label className='inline-flex  items-center space-x-2 ' >
+            <input className='peer sr-only' type="checkbox" />
+            <div className="relative w-8 h-4 rounded-full bg-gray-500 after:content-[''] after:absolute after:w-4 after:h-4 after:rounded-full after:bg-white  peer-checked:after:translate-x-full rtl:peer-checked:-translate-x-full peer-checked:bg-green-600 " onClick={handlePinkMode}> 
+            </div>
+            <p>{pinkText}</p>
+          </label>
 
-        {/* DarkMode */}
-        <label className='inline-flex items-center space-x-2'>
-          {/* whenever you use the input wrap it with the label and rtl:right to left mode ltr: left to right  */}
-          {/* peer allows to add styles to the element according to the state of the sibling */}
-          {/* sr-only: makes the content invisible in screen but will be present in screen */}
-          <input className='peer sr-only' type="checkbox" name="" id="" />
-          <div className="relative w-8 h-4 bg-gray-400 rounded-full after:content-[''] after:absolute after:w-4 after:h-4 after:bg-white after:rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:bg-blue-500" onClick={toggleMode}></div>
-          <p>{modeText}</p>
-        </label>
-
-        
+          {/* DarkMode */}
+          <label className='inline-flex items-center space-x-2'>
+            {/* whenever you use the input wrap it with the label and rtl:right to left mode ltr: left to right  */}
+            {/* peer allows to add styles to the element according to the state of the sibling */}
+            {/* sr-only: makes the content invisible in screen but will be present in screen */}
+            <input className='peer sr-only' type="checkbox" name="" id="" />
+            <div className="relative w-8 h-4 bg-gray-400 rounded-full after:content-[''] after:absolute after:w-4 after:h-4 after:bg-white after:rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:bg-blue-500" onClick={toggleMode}></div>
+            <p>{modeText}</p>
+          </label>
+          </div>  
       </nav>
     </div>
     
