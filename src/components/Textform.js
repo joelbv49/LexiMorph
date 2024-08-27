@@ -69,20 +69,20 @@ export default function Textform(props) {
      
     <div className= {props.mode} >
       <div className="box min-h-screen flex justify-center  dark:bg-black" >
-            <div className={`w-[90%]  my-3 ${props.greenMode.background2} rounded-xl shadow-md p-11  space-y-8  dark:bg-slate-900`} >
-              <h1 className={`font-bold text-xl ${props.greenMode.textColor2} dark:text-white`}>{props.heading}</h1>
+            <div className={`w-[90%]  my-3 ${props.pinkMode.background2} rounded-xl shadow-md p-11  space-y-8  dark:bg-slate-900`} >
+              <h1 className={`font-bold text-xl ${props.pinkMode.textColor2} dark:text-white`}>{props.heading}</h1>
 
               <textarea className='outline-none  w-full border border-gray-400 p-2 rounded-md dark:text-black' value ={text} onChange={handleUser} placeholder='Enter your text' rows="7"></textarea>
 
-              <button className={`${props.greenMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2 rounded-md text-white`} onClick={handleUpClick}>UpperCase</button>
-              <button className={`${props.greenMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2 ml-20 rounded-md text-white`} onClick={handleCapitalize}>Capitalize</button>
-              <button className={`${props.greenMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleLowerCase}>lowerCase</button>
-              <button className={`${props.greenMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleClear}>Clear Text</button>
-              <button className={`${props.greenMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleSpeak}>Speak</button>
-              <button className={`${props.greenMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleDownload}>Download PDF</button>
+              <button className={`${props.pinkMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2 rounded-md text-white`} onClick={handleUpClick}>UpperCase</button>
+              <button className={`${props.pinkMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2 ml-20 rounded-md text-white`} onClick={handleCapitalize}>Capitalize</button>
+              <button className={`${props.pinkMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleLowerCase}>lowerCase</button>
+              <button className={`${props.pinkMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleClear}>Clear Text</button>
+              <button className={`${props.pinkMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleSpeak}>Speak</button>
+              <button className={`${props.pinkMode.background2 ==="bg-[#AE044E]"?"bg-[#440075]":"bg-blue-700"} dark:bg-blue-700 px-8  py-2  ml-20 rounded-md text-white`} onClick={handleDownload}>Download PDF</button>
 
               {/* summary */}
-              <div className={`space-y-3 ${props.greenMode.textColor2} dark:text-white`}>
+              <div className={`space-y-3 ${props.pinkMode.textColor2} dark:text-white`}>
                 <h1 className='font-bold text-2xl'>Your Text Summary</h1>
                 <p className='mx-10' > {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.trim().length} characters</p>
                 <p className='mx-10' >{0.008*(text.split(" ").filter((element)=>{return element.length!==0}).length)} minutes to read a word</p>

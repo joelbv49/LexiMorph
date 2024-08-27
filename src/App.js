@@ -4,12 +4,12 @@ import Navbar from './components/Navbar'
 import Textform from './components/Textform';
 import { useState } from 'react';
 import Alert from './components/Alert';
-// import About from './components/About';
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Routes
-// } from "react-router-dom";
+import About from './components/About';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 
 function App() {
   // setting DarkMode
@@ -81,30 +81,29 @@ function App() {
 
   // green mode
   
-  const [greenMode,setGreenMode] = useState({
+  const [pinkMode,setpinkMode] = useState({
     background2:'bg-white',
     textColor2:'text-black',
   });
-  const [greenModeText,setGreenModeText] = useState("Enable Pink Mode");
-  const handleGreenMode = ()=>{
-    const div1 = document.querySelector(".box");// if you place this outside this function, it shows error first time because you are trying to access the classlist before it is rendered in DOM which will be null
-    if(greenMode.background2 === "bg-white"){
-      setGreenMode({
+  const [pinkModeText,setpinkModeText] = useState("Enable Pink Mode");
+  const handlePinkMode = ()=>{
+    //const div1 = document.querySelector(".box");// if you place this outside this function, it shows error first time because you are trying to access the classlist before it is rendered in DOM which will be null
+
+    if(pinkMode.background2 === "bg-white"){
+      setpinkMode({
         background2:'bg-[#AE044E]',
         textColor2:'text-white',
       })
-      setGreenModeText("Enable Light Mode");
+      setpinkModeText("Enable Light Mode");
       showAlert("Pink Mode Enabled","Success");
-      div1.classList.add("bg-[#750044]");
     }
-    else if(greenMode.background2 === "bg-[#AE044E]"){
-      setGreenMode({
+    else if(pinkMode.background2 === "bg-[#AE044E]"){
+      setpinkMode({
         background2:'bg-white',
         textColor2:'text-black',
       })
-      setGreenModeText("Enable Pink Mode");
+      setpinkModeText("Enable Pink Mode");
       showAlert("Light Mode Enabled","Success");
-      div1.classList.remove("bg-[#750044]");
     }
   }
   document.body.style.backgroundColor = backColor.back1;
@@ -115,35 +114,35 @@ function App() {
     // react is a single page application where without reloaded the components will be updated
 
     <>
-      {/* <Router> */}
+      <Router>
         <div className="con max-h-full">
           
           {/* nav bar */}
-          <Navbar title = "LexiMorph" aboutText = "about" mode = {mode} toggleMode = {toggleMode} modeText = {modeText} Color = {Color} handleColor = {handleColor} handleBackColor1 = {handleBackColor1} backColor = {backColor} greenText = {greenModeText} handleGreenMode = {handleGreenMode}/>
+          <Navbar title = "LexiMorph" aboutText = "about" mode = {mode} toggleMode = {toggleMode} modeText = {modeText} Color = {Color} handleColor = {handleColor} handleBackColor1 = {handleBackColor1} backColor = {backColor} pinkText = {pinkModeText} handlePinkMode = {handlePinkMode}/>
 
           {/* main */}
           <Alert alert = {alert}/>
 
-          <Textform heading = "Enter your text to analyze below" mode = {mode} showAlert = {showAlert} Color = {Color} backColor = {backColor} greenMode = {greenMode} />
+          
           
           {/* A <Routes> looks through its children <Route>s and
             renders the first one that matches the current URL.
             react does a partial matching of 
             the path so you need to use exact path */}
-          {/* <Routes>
+          <Routes>
             <Route
               exact path='/'
               element = 
-              {<Textform heading = "Enter your text to analyze below" mode = {mode} showAlert = {showAlert} Color = {Color} backColor = {backColor} greenMode = {greenMode} />}
+              {<Textform heading = "Enter your text to analyze below" mode = {mode} showAlert = {showAlert} Color = {Color} backColor = {backColor} pinkMode = {pinkMode} />}
             />
             <Route 
               exact path='/about'
-              element = {<About mode = {mode} greenMode = {greenMode}/>}
+              element = {<About mode = {mode} pinkMode = {pinkMode}/>}
             />
-          </Routes> */}
+          </Routes>
           
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }

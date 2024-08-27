@@ -25,17 +25,17 @@ export default function About(props) {
 
 //   BorderStyle
 let borderStyle = {
-    borderColor: (props.greenMode.background2 === 'bg-green-600')?'border-white':'border-gray-400',
+    borderColor: (props.pinkMode.background2 === 'bg-[#AE044E]')?' border-2 border-white':'border-gray-400',
 }
-console.log(borderStyle.borderColor);
+
   
   return (
-    <div className={`flex flex-col justify-center items-center min-h-screen ${props.mode} dark:bg-black `}>
-        <div className={`space-y-10 py-20 ${props.greenMode.background2} ${props.greenMode.textColor2} dark:bg-slate-900 dark:text-white px-10 w-3/5 rounded-lg shadow-lg`}>
+    <div className={`box1 flex flex-col justify-center items-center min-h-screen ${props.mode} dark:bg-black `}>
+        <div className={`space-y-10 py-20 ${props.pinkMode.background2} ${props.pinkMode.textColor2} dark:bg-slate-900 dark:text-white px-10 w-3/5 rounded-lg shadow-lg`}>
             <h2 className='font-bold text-3xl text-center'>About LexiMorph</h2>
             
             <div className="border border-gray-500 dark:border-black rounded-md flex flex-col">
-                <button className= {`border ${borderStyle.borderColor}  dark:border-white py-2 text-start px-3 z-20`} onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse1' >Text Transformation Magic</button>
+                <button className= {`border  ${borderStyle.borderColor}  dark:border-white py-2 text-start px-3 z-20`} onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse1' >Text Transformation Magic</button>
                 <div className=" collapse1   transition ease-in-out duration-500 -translate-y-10 h-0">
                     <p className='hidden'>Convert text to uppercase, lowercase, or capitalize it effortlessly. Whether you’re crafting a tweet, writing an essay, or composing an email, LexiMorph has your back.</p>
                 </div>

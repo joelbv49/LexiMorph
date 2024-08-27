@@ -1,13 +1,14 @@
 // always write the first name of the file capital
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 // The information you pass down like this is called props.
 // components let you split the ui independently ex Navbar is a component (pieces of codes)
 // props are (like arguments  in the functions ) the information that can be passed to a component
 // propTypes - a dataType of a props, To run typechecking on the props for a component, you can assign the special propTypes property 
-export default function Navbar({title = "Set your text here",aboutText,mode,toggleMode,modeText,Color,handleColor,handleBackColor1,backColor,handleGreenMode,greenText}) { 
+export default function Navbar({title = "Set your text here",aboutText,mode,toggleMode,modeText,Color,handleColor,handleBackColor1,backColor,handlePinkMode,pinkText}) { 
 
   
   return (
@@ -18,14 +19,13 @@ export default function Navbar({title = "Set your text here",aboutText,mode,togg
 
         <div className=" flex">
 
-          <a className="font-bold italic text-[#f741bd]" href='#'>{title}</a>
+          <Link className="font-bold italic text-[#f741bd]" to='/'>{title}</Link>
           <ul className='ml-20 flex space-x-10'>
             <li>
-              <a href='#'>Home</a>
+              <Link to='/'>Home</Link>
             </li>
-            <li>Contact</li>
             <li>
-              <a href='#'>{aboutText}</a>
+              <Link to='/about'>{aboutText}</Link>
             </li>
           </ul>
 
@@ -52,12 +52,12 @@ export default function Navbar({title = "Set your text here",aboutText,mode,togg
           <div className="text-xs border border-gray-500 px-2 py-1 rounded-full font-bold">customize color</div>
         </label>
         
-        {/* GreenMode */}
+        {/* pinkMode */}
         <label className='inline-flex  items-center space-x-2 ' >
           <input className='peer sr-only' type="checkbox" />
-          <div className="relative w-8 h-4 rounded-full bg-gray-500 after:content-[''] after:absolute after:w-4 after:h-4 after:rounded-full after:bg-white  peer-checked:after:translate-x-full rtl:peer-checked:-translate-x-full peer-checked:bg-green-600 " onClick={handleGreenMode}> 
+          <div className="relative w-8 h-4 rounded-full bg-gray-500 after:content-[''] after:absolute after:w-4 after:h-4 after:rounded-full after:bg-white  peer-checked:after:translate-x-full rtl:peer-checked:-translate-x-full peer-checked:bg-green-600 " onClick={handlePinkMode}> 
           </div>
-          <p>{greenText}</p>
+          <p>{pinkText}</p>
         </label>
 
         {/* DarkMode */}
