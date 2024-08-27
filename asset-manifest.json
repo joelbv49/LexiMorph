@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/LexiMorph/static/css/main.f934ad0c.css",
-    "main.js": "/LexiMorph/static/js/main.85ed693c.js",
+    "main.css": "/LexiMorph/static/css/main.cebdbbf6.css",
+    "main.js": "/LexiMorph/static/js/main.5bb35f96.js",
     "static/js/453.9e5aac0a.chunk.js": "/LexiMorph/static/js/453.9e5aac0a.chunk.js",
     "index.html": "/LexiMorph/index.html",
-    "main.f934ad0c.css.map": "/LexiMorph/static/css/main.f934ad0c.css.map",
-    "main.85ed693c.js.map": "/LexiMorph/static/js/main.85ed693c.js.map",
+    "main.cebdbbf6.css.map": "/LexiMorph/static/css/main.cebdbbf6.css.map",
+    "main.5bb35f96.js.map": "/LexiMorph/static/js/main.5bb35f96.js.map",
     "453.9e5aac0a.chunk.js.map": "/LexiMorph/static/js/453.9e5aac0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f934ad0c.css",
-    "static/js/main.85ed693c.js"
+    "static/css/main.cebdbbf6.css",
+    "static/js/main.5bb35f96.js"
   ]
 }
