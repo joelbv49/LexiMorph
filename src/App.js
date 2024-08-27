@@ -131,7 +131,7 @@ function App() {
             the path so you need to use exact path */}
           <Routes>
             <Route
-              exact path='/LexiMorph'
+              exact path='/'
               element = 
               {<Textform heading = "Enter your text to analyze below" mode = {mode} showAlert = {showAlert} Color = {Color} backColor = {backColor} pinkMode = {pinkMode} />}
             />
