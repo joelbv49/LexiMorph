@@ -19,10 +19,10 @@ export default function Navbar({title = "Set your text here",aboutText,mode,togg
 
         <div className=" flex">
 
-          <Link className="font-bold italic text-[#f741bd]" to='/'>{title}</Link>
+          <Link className="font-bold italic text-[#f741bd]" to='/LexiMorph'>{title}</Link>
           <ul className='ml-20 flex space-x-10'>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to='/LexiMorph'>Home</Link>
             </li>
             <li>
               <Link to='/about'>{aboutText}</Link>
