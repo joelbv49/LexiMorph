@@ -85,26 +85,29 @@ function App() {
     background2:'bg-white',
     textColor2:'text-black',
   });
-  const [greenModeText,setGreenModeText] = useState("Enable Green Mode");
-
+  const [greenModeText,setGreenModeText] = useState("Enable Pink Mode");
   const handleGreenMode = ()=>{
+    const div1 = document.querySelector(".box");// if you place this outside this function, it shows error first time because you are trying to access the classlist before it is rendered in DOM which will be null
     if(greenMode.background2 === "bg-white"){
       setGreenMode({
-        background2:'bg-green-600',
+        background2:'bg-[#AE044E]',
         textColor2:'text-white',
       })
       setGreenModeText("Enable Light Mode");
-      showAlert("Green Mode Enabled","Success");
+      showAlert("Pink Mode Enabled","Success");
+      div1.classList.add("bg-[#750044]");
     }
-    else if(greenMode.background2 === "bg-green-600"){
+    else if(greenMode.background2 === "bg-[#AE044E]"){
       setGreenMode({
         background2:'bg-white',
         textColor2:'text-black',
       })
-      setGreenModeText("Enable Green Mode");
+      setGreenModeText("Enable Pink Mode");
       showAlert("Light Mode Enabled","Success");
+      div1.classList.remove("bg-[#750044]");
     }
   }
+  document.body.style.backgroundColor = backColor.back1;
   return (
     // <></> - is a jsx fragment ,jsx is a combination of html and js 
     // you can jump into js by using {} and you can return only one tag 
@@ -113,8 +116,8 @@ function App() {
 
     <>
       {/* <Router> */}
-        <div className="con h-screen bg-gray-300" style={{backgroundColor:backColor.back1}}>
-
+        <div className="con max-h-full">
+          
           {/* nav bar */}
           <Navbar title = "LexiMorph" aboutText = "about" mode = {mode} toggleMode = {toggleMode} modeText = {modeText} Color = {Color} handleColor = {handleColor} handleBackColor1 = {handleBackColor1} backColor = {backColor} greenText = {greenModeText} handleGreenMode = {handleGreenMode}/>
 
@@ -131,11 +134,11 @@ function App() {
             <Route
               exact path='/'
               element = 
-              {}
+              {<Textform heading = "Enter your text to analyze below" mode = {mode} showAlert = {showAlert} Color = {Color} backColor = {backColor} greenMode = {greenMode} />}
             />
             <Route 
               exact path='/about'
-              element = {<About/>}
+              element = {<About mode = {mode} greenMode = {greenMode}/>}
             />
           </Routes> */}
           

@@ -18,7 +18,7 @@ export default function Navbar({title = "Set your text here",aboutText,mode,togg
 
         <div className=" flex">
 
-          <a className="font-bold" href='#'>{title}</a>
+          <a className="font-bold italic text-[#f741bd]" href='#'>{title}</a>
           <ul className='ml-20 flex space-x-10'>
             <li>
               <a href='#'>Home</a>

@@ -1,13 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    const [myStyle,setMyStyle] = useState({
-        color:'black',
-        backgroundColor:'white'
-    });
-    
-    const [btnText,setBtnText] = useState("Enable Dark Mode");
+   
 
   const handleCollapse = (event)=>{
     let collapse = event.target.getAttribute("aria-expanded");
@@ -28,50 +23,50 @@ export default function About() {
     }
   }
 
-  const handleDarkMode = ()=>{
-    if(myStyle.backgroundColor === "white"){
-        setMyStyle({
-            color:'white',
-            backgroundColor:'black'
-        });
-        setBtnText("Enable Light Mode");
-    }
-    else{
-        setMyStyle({
-            color:'black',
-            backgroundColor:'white'
-        });
-        setBtnText("Enable Dark Mode");
-    }
-  }
-
+//   BorderStyle
+let borderStyle = {
+    borderColor: (props.greenMode.background2 === 'bg-green-600')?'border-white':'border-gray-400',
+}
+console.log(borderStyle.borderColor);
+  
   return (
-    <div className='bg-white flex flex-col justify-center items-center py-4 space-y-3' style={myStyle}>
-        <h2 className='font-bold text-xl'>About Me</h2>
-        
-        <div className="border border-gray-500 rounded-md flex flex-col">
-            <button className='border border-gray-400 w-[30rem] py-2 text-start px-3 z-20'onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse1' >MyNetflix</button>
-            <div className=" collapse1 w-[30rem]  transition ease-in-out duration-500 -translate-y-10 h-0">
-                <p className='hidden'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error consectetur facilis quas, optio quibusdam, adipisci commodi corporis similique nobis debitis nostrum minus! Reiciendis voluptatem accusamus recusandae optio sit alias ullam.</p>
-            </div>
+    <div className={`flex flex-col justify-center items-center min-h-screen ${props.mode} dark:bg-black `}>
+        <div className={`space-y-10 py-20 ${props.greenMode.background2} ${props.greenMode.textColor2} dark:bg-slate-900 dark:text-white px-10 w-3/5 rounded-lg shadow-lg`}>
+            <h2 className='font-bold text-3xl text-center'>About LexiMorph</h2>
+            
+            <div className="border border-gray-500 dark:border-black rounded-md flex flex-col">
+                <button className= {`border ${borderStyle.borderColor}  dark:border-white py-2 text-start px-3 z-20`} onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse1' >Text Transformation Magic</button>
+                <div className=" collapse1   transition ease-in-out duration-500 -translate-y-10 h-0">
+                    <p className='hidden'>Convert text to uppercase, lowercase, or capitalize it effortlessly. Whether you’re crafting a tweet, writing an essay, or composing an email, LexiMorph has your back.</p>
+                </div>
 
-            <button className='border border-gray-400 w-[30rem] py-2 text-start px-3' onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse2' >why Netflix</button>
-            <div className=" collapse1 w-[30rem]  transition ease-in-out duration-500 -translate-y-10 h-0">
-                <p className='hidden'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error consectetur facilis quas, optio quibusdam, adipisci commodi corporis similique nobis debitis nostrum minus! Reiciendis voluptatem accusamus recusandae optio sit alias ullam.</p>
-            </div>
+                <button className= {`border ${borderStyle.borderColor} dark:border-white py-2 text-start px-3`} onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse2' >Sentence Sculpting</button>
+                <div className=" collapse1   transition ease-in-out duration-500 -translate-y-10 h-0">
+                    <p className='hidden'>Split paragraphs into sentences or merge sentences into poetic prose. LexiMorph dances with punctuation to create symphonies of meaning.</p>
+                </div>
 
-            <button className='border border-gray-400 w-[30rem] py-2 text-start px-3' onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse3' >about Netflix</button>
-            <div className=" collapse1 w-[30rem]  transition ease-in-out duration-500 -translate-y-10 h-0">
-                <p className='hidden'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error consectetur facilis quas, optio quibusdam, adipisci commodi corporis similique nobis debitis nostrum minus! Reiciendis voluptatem accusamus recusandae optio sit alias ullam.</p>
-            </div>
+                <button className= {`border ${borderStyle.borderColor} dark:border-white py-2 text-start px-3`} onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse3' >Word Counts and Beyond</button>
+                <div className=" collapse1   transition ease-in-out duration-500 -translate-y-10 h-0">
+                    <p className='hidden'>Ever wondered how long it takes to read your text? LexiMorph estimates reading time, helping you tailor your content for busy readers.</p>
+                </div>
 
-            <button className='border border-gray-400 w-[30rem] py-2 text-start px-3' onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse4' >for more queries</button>
-            <div className=" collapse1 w-[30rem]  transition ease-in-out duration-500 -translate-y-10 h-0">
-                <p className='hidden'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error consectetur facilis quas, optio quibusdam, adipisci commodi corporis similique nobis debitis nostrum minus! Reiciendis voluptatem accusamus recusandae optio sit alias ullam.</p>
+                <button className= {`border ${borderStyle.borderColor}  dark:border-white py-2 text-start px-3`} onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse4' >Readability Insights</button>
+                <div className=" collapse1   transition ease-in-out duration-500 -translate-y-10 h-0">
+                    <p className='hidden'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error consectetur facilis quas, optio quibusdam, adipisci commodi corporis similique nobis debitis nostrum minus! Reiciendis voluptatem accusamus recusandae optio sit alias ullam.</p>
+                </div>
+
+                <button className= {`border ${borderStyle.borderColor}  dark:border-white py-2 text-start px-3`} onClick={handleCollapse} type="button" aria-expanded = "false" aria-controls='collapse4' >Preview Your Creations</button>
+                <div className=" collapse1   transition ease-in-out duration-500 -translate-y-10 h-0">
+                    <p className='hidden'>Before hitting that “publish” button, take LexiMorph for a spin. Preview your transformed text and ensure it sparkles like stardust.</p>
+                </div>
+                
+            </div>
+            <div>
+                <p className='italic'>LexiMorph isn’t just a tool; it’s a companion for writers, poets, and anyone who revels in the magic of language. Join us on this enchanting journey!</p>
+                <p className='italic'>Feel free to customize this description further, adding personal touches or emphasizing specific features that resonate with you. And remember, every word you write here is a spell cast into the digital realm!</p>
             </div>
         </div>
-
-        <button className='bg-blue-600 px-3 py-1 text-white rounded-md hover:bg-blue-400' onClick={handleDarkMode} type='submit' >{btnText}</button>
+    
     </div>
   )
 }
